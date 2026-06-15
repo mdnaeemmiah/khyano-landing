@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Base ── */
+:root {
+  --brand: #2d2db0;
+  --brand-purple: #7c3aed;
+  --brand-pink: #c026d3;
+  --text: #111827;
+  --muted: #6b7280;
+  --light: #9ca3af;
+  --section-width: 1100px;
+  --header-width: 1200px;
+  --px: 40px;
+  --font: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #fff;
+  color: var(--text);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Layout wrappers ── */
+.container {
+  width: 100%;
+  max-width: var(--section-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--px);
+  padding-right: var(--px);
+}
+.container--header {
+  width: 100%;
+  max-width: var(--header-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--px);
+  padding-right: var(--px);
+}
+
+/* ── Grids ── */
+.grid-3  { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.grid-4  { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; align-items: stretch; }
+.grid-2  { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.grid-tools-top { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 16px; }
+.grid-tools-mid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
+.grid-tools-bot { display: grid; grid-template-columns: 1fr 2fr; gap: 16px; }
+
+/* Brand Scanner 3-col row */
+.scanner-row {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+  align-items: stretch;
+}
+
+.logos-row    { display: flex; align-items: center; justify-content: space-between; }
+.store-row    { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.about-founder { display: flex; gap: 48px; align-items: flex-start; }
+
+/* About page — purpose 2-col */
+.about-purpose {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* Value cards lift on hover */
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.10) !important;
+}
+
+/* Tools section rows */
+.tools-row1 { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 16px; align-items: stretch; }
+.tools-row2 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.tools-row3 { display: grid; grid-template-columns: 1fr 1.6fr; gap: 16px; }
+
+/* ── Header ── */
+.header-nav          { display: flex; align-items: center; gap: 36px; }
+.header-mobile-menu  { display: none; }
+.header-actions      { display: flex; align-items: center; gap: 20px; }
+/* "Get Started" in header — always visible */
+.header-get-started  { display: inline-flex; }
+
+/* ── Hover effects ── */
+
+/* Nav links */
+.header-nav a         { transition: color 0.18s; }
+.header-nav a:hover   { color: #2d2db0 !important; }
+
+/* Login link */
+.login-link           { transition: color 0.18s; }
+.login-link:hover     { color: #2d2db0 !important; }
+
+/* Get Started pill */
+.btn-get-started      { transition: opacity 0.18s, transform 0.18s; }
+.btn-get-started:hover { opacity: 0.88; transform: translateY(-1px); }
+
+/* Primary gradient buttons */
+.btn-primary { transition: opacity 0.18s, transform 0.18s, box-shadow 0.18s; }
+.btn-primary:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(124,58,237,0.4) !important; }
+
+/* Outline buttons */
+.btn-outline { transition: background 0.18s, color 0.18s, border-color 0.18s; }
+.btn-outline:hover { background: #f0f2fb !important; border-color: #2d2db0 !important; color: #2d2db0 !important; }
+
+/* Try Now ghost button */
+.btn-ghost { transition: background 0.18s, transform 0.18s; }
+.btn-ghost:hover { background: rgba(255,255,255,0.22) !important; transform: translateY(-1px); }
+
+/* Store buttons */
+.btn-store { transition: background 0.18s, transform 0.18s; }
+.btn-store:hover { background: #1a1a1a !important; transform: translateY(-2px); }
+
+/* Cards — lift on hover */
+.card-hover { transition: transform 0.2s, box-shadow 0.2s; }
+.card-hover:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.11) !important; }
+
+/* Pricing plan cards */
+.pricing-card { transition: transform 0.2s, box-shadow 0.2s; }
+.pricing-card:hover { transform: translateY(-6px) !important; box-shadow: 0 12px 36px rgba(45,45,176,0.14) !important; }
+
+/* Pricing CTA buttons */
+.btn-plan { transition: opacity 0.18s, transform 0.15s; }
+.btn-plan:hover { opacity: 0.88; transform: scale(1.02); }
+
+/* Footer links */
+.footer-link { transition: color 0.18s; }
+.footer-link:hover { color: #2d2db0 !important; }
+
+/* Mobile nav links in dropdown */
+.mobile-nav-link { transition: color 0.15s, padding-left 0.15s; }
+.mobile-nav-link:hover { color: #2d2db0 !important; padding-left: 6px !important; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  :root { --px: 24px; }
+
+  .grid-3          { grid-template-columns: 1fr 1fr; }
+  .grid-4          { grid-template-columns: 1fr 1fr; }
+  .grid-2          { grid-template-columns: 1fr; gap: 40px; }
+  .grid-tools-top  { grid-template-columns: 1fr; }
+  .grid-tools-mid  { grid-template-columns: 1fr 1fr; }
+  .grid-tools-bot  { grid-template-columns: 1fr; }
+  .about-founder   { flex-direction: column; gap: 32px; align-items: center; }
+  .about-purpose   { grid-template-columns: 1fr; gap: 36px; }
+  .logos-row       { flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .scanner-row     { grid-template-columns: 1fr 0.55fr 1fr; }
+
+  .tools-row1 { grid-template-columns: 1fr 1fr; }
+  .tools-row2 { grid-template-columns: 1fr 1fr; }
+  .tools-row3 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  :root { --px: 16px; }
+
+  .grid-3          { grid-template-columns: 1fr; }
+  .grid-4          { grid-template-columns: 1fr; }
+  .grid-2          { grid-template-columns: 1fr; }
+  .grid-tools-top  { grid-template-columns: 1fr; }
+  .grid-tools-mid  { grid-template-columns: 1fr; }
+  .grid-tools-bot  { grid-template-columns: 1fr; }
+  .scanner-row     { grid-template-columns: 1fr; }
+  .about-purpose   { grid-template-columns: 1fr; gap: 28px; }
+
+  .tools-row1 { grid-template-columns: 1fr; }
+  .tools-row2 { grid-template-columns: 1fr; }
+  .tools-row3 { grid-template-columns: 1fr; }
+
+  /* Header: hide nav + login, keep logo + Get Started + hamburger */
+  .header-nav      { display: none; }
+  .header-mobile-menu { display: flex; }
+  .login-link      { display: none !important; }
+}
