@@ -11,7 +11,7 @@
   --text: #111827;
   --muted: #6b7280;
   --light: #9ca3af;
-  --section-width: 1100px;
+  --section-width: 1200px;
   --header-width: 1200px;
   --px: 40px;
   --font: var(--font-geist-sans), Arial, Helvetica, sans-serif;
@@ -59,7 +59,8 @@ body {
   align-items: stretch;
 }
 
-.logos-row    { display: flex; align-items: center; justify-content: space-between; }
+.logos-row      { display: flex; align-items: center; justify-content: space-between; }
+.categories-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
 .store-row    { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
 .about-founder { display: flex; gap: 48px; align-items: flex-start; }
 
@@ -123,6 +124,10 @@ body {
 .card-hover { transition: transform 0.2s, box-shadow 0.2s; }
 .card-hover:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.11) !important; }
 
+/* Pain point cards — border glow on hover */
+.pain-card { transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, background-color 0.2s; }
+.pain-card:hover { background-color: #fff !important; border-color: #e0e3f5 !important; }
+
 /* Pricing plan cards */
 .pricing-card { transition: transform 0.2s, box-shadow 0.2s; }
 .pricing-card:hover { transform: translateY(-6px) !important; box-shadow: 0 12px 36px rgba(45,45,176,0.14) !important; }
@@ -152,6 +157,7 @@ body {
   .about-founder   { flex-direction: column; gap: 32px; align-items: center; }
   .about-purpose   { grid-template-columns: 1fr; gap: 36px; }
   .logos-row       { flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .categories-row  { grid-template-columns: repeat(3, 1fr); }
   .scanner-row     { grid-template-columns: 1fr 0.55fr 1fr; }
 
   .tools-row1 { grid-template-columns: 1fr 1fr; }
@@ -171,9 +177,10 @@ body {
   .scanner-row     { grid-template-columns: 1fr; }
   .about-purpose   { grid-template-columns: 1fr; gap: 28px; }
 
-  .tools-row1 { grid-template-columns: 1fr; }
-  .tools-row2 { grid-template-columns: 1fr; }
-  .tools-row3 { grid-template-columns: 1fr; }
+  .tools-row1     { grid-template-columns: 1fr; }
+  .tools-row2     { grid-template-columns: 1fr; }
+  .tools-row3     { grid-template-columns: 1fr; }
+  .categories-row { grid-template-columns: repeat(2, 1fr); }
 
   /* Header: hide nav + login, keep logo + Get Started + hamburger */
   .header-nav      { display: none; }
