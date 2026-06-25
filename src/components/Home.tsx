@@ -128,10 +128,10 @@ export default function Home() {
           </div>
           <div className="grid-3">
             {painPoints.map((p) => (
-              <div key={p.title} className="card-hover pain-card" style={{ backgroundColor: "#f9fafb", borderRadius: 14, padding: "24px 20px", border: "1px solid transparent" }}>
-                <div style={{ marginBottom: 12 }}>{p.icon}</div>
-                <h3 style={{ fontWeight: 700, color: "#111827", fontSize: 14, margin: "0 0 8px" }}>{p.title}</h3>
-                <p style={{ color: "#6b7280", fontSize: 13, lineHeight: 1.7, margin: 0 }}>{p.desc}</p>
+              <div key={p.title} className="card-hover pain-card" style={{ backgroundColor: "#f9fafb", borderRadius: 14, padding: "28px 24px", border: "1px solid transparent" }}>
+                <div style={{ marginBottom: 14 }}>{p.icon}</div>
+                <h3 style={{ fontWeight: 800, color: "#111827", fontSize: 20, margin: "0 0 10px", lineHeight: 1.2 }}>{p.title}</h3>
+                <p style={{ color: "#6b7280", fontSize: 14, lineHeight: 1.75, margin: 0 }}>{p.desc}</p>
               </div>
             ))}
           </div>
